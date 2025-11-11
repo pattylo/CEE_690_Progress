@@ -1,0 +1,223 @@
+Improved LSTM Model Training Log
+============================================================
+
+Changes from previous model:
+  - Hidden size: 64 → 32
+  - Num layers: 2 → 1
+  - Dropout: 0.2 → 0.3
+  - Added L2 regularization: 1e-5
+  - Early stopping: patience = 20
+
+============================================================
+
+Training Progress:
+------------------------------------------------------------
+Epoch [1/200], Train Loss: 0.001253, Test Loss: 0.000451
+Epoch [2/200], Train Loss: 0.000601, Test Loss: 0.000280
+Epoch [3/200], Train Loss: 0.000469, Test Loss: 0.000344
+Epoch [4/200], Train Loss: 0.000486, Test Loss: 0.000306
+Epoch [5/200], Train Loss: 0.000455, Test Loss: 0.000300
+Epoch [6/200], Train Loss: 0.000407, Test Loss: 0.000276
+Epoch [7/200], Train Loss: 0.000350, Test Loss: 0.000273
+Epoch [8/200], Train Loss: 0.000348, Test Loss: 0.000286
+Epoch [9/200], Train Loss: 0.000328, Test Loss: 0.000261
+Epoch [10/200], Train Loss: 0.000315, Test Loss: 0.000285
+Epoch [11/200], Train Loss: 0.000311, Test Loss: 0.000283
+Epoch [12/200], Train Loss: 0.000317, Test Loss: 0.000270
+Epoch [13/200], Train Loss: 0.000288, Test Loss: 0.000269
+Epoch [14/200], Train Loss: 0.000293, Test Loss: 0.000267
+Epoch [15/200], Train Loss: 0.000295, Test Loss: 0.000266
+Epoch [16/200], Train Loss: 0.000277, Test Loss: 0.000263
+Epoch [17/200], Train Loss: 0.000278, Test Loss: 0.000258
+Epoch [18/200], Train Loss: 0.000277, Test Loss: 0.000260
+Epoch [19/200], Train Loss: 0.000273, Test Loss: 0.000262
+Epoch [20/200], Train Loss: 0.000279, Test Loss: 0.000258
+Epoch [21/200], Train Loss: 0.000276, Test Loss: 0.000259
+Epoch [22/200], Train Loss: 0.000281, Test Loss: 0.000257
+Epoch [23/200], Train Loss: 0.000272, Test Loss: 0.000259
+Epoch [24/200], Train Loss: 0.000288, Test Loss: 0.000259
+Epoch [25/200], Train Loss: 0.000289, Test Loss: 0.000257
+Epoch [26/200], Train Loss: 0.000268, Test Loss: 0.000259
+Epoch [27/200], Train Loss: 0.000268, Test Loss: 0.000258
+Epoch [28/200], Train Loss: 0.000266, Test Loss: 0.000258
+Epoch [29/200], Train Loss: 0.000268, Test Loss: 0.000258
+Epoch [30/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [31/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [32/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [33/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [34/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [35/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [36/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [37/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [38/200], Train Loss: 0.000268, Test Loss: 0.000258
+Epoch [39/200], Train Loss: 0.000276, Test Loss: 0.000258
+Epoch [40/200], Train Loss: 0.000269, Test Loss: 0.000256
+Epoch [41/200], Train Loss: 0.000286, Test Loss: 0.000257
+Epoch [42/200], Train Loss: 0.000271, Test Loss: 0.000257
+Epoch [43/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [44/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [45/200], Train Loss: 0.000265, Test Loss: 0.000256
+Epoch [46/200], Train Loss: 0.000269, Test Loss: 0.000258
+Epoch [47/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [48/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [49/200], Train Loss: 0.000279, Test Loss: 0.000257
+Epoch [50/200], Train Loss: 0.000268, Test Loss: 0.000258
+Epoch [51/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [52/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [53/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [54/200], Train Loss: 0.000268, Test Loss: 0.000258
+Epoch [55/200], Train Loss: 0.000269, Test Loss: 0.000256
+Epoch [56/200], Train Loss: 0.000265, Test Loss: 0.000258
+Epoch [57/200], Train Loss: 0.000273, Test Loss: 0.000257
+Epoch [58/200], Train Loss: 0.000268, Test Loss: 0.000257
+Epoch [59/200], Train Loss: 0.000266, Test Loss: 0.000258
+Epoch [60/200], Train Loss: 0.000266, Test Loss: 0.000256
+Epoch [61/200], Train Loss: 0.000265, Test Loss: 0.000256
+Epoch [62/200], Train Loss: 0.000276, Test Loss: 0.000257
+Epoch [63/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [64/200], Train Loss: 0.000278, Test Loss: 0.000258
+Epoch [65/200], Train Loss: 0.000271, Test Loss: 0.000257
+Epoch [66/200], Train Loss: 0.000271, Test Loss: 0.000257
+Epoch [67/200], Train Loss: 0.000268, Test Loss: 0.000257
+Epoch [68/200], Train Loss: 0.000280, Test Loss: 0.000256
+Epoch [69/200], Train Loss: 0.000269, Test Loss: 0.000256
+Epoch [70/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [71/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [72/200], Train Loss: 0.000282, Test Loss: 0.000256
+Epoch [73/200], Train Loss: 0.000283, Test Loss: 0.000257
+Epoch [74/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [75/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [76/200], Train Loss: 0.000265, Test Loss: 0.000256
+Epoch [77/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [78/200], Train Loss: 0.000281, Test Loss: 0.000257
+Epoch [79/200], Train Loss: 0.000266, Test Loss: 0.000256
+Epoch [80/200], Train Loss: 0.000269, Test Loss: 0.000258
+Epoch [81/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [82/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [83/200], Train Loss: 0.000281, Test Loss: 0.000260
+Epoch [84/200], Train Loss: 0.000278, Test Loss: 0.000256
+Epoch [85/200], Train Loss: 0.000269, Test Loss: 0.000256
+Epoch [86/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [87/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [88/200], Train Loss: 0.000272, Test Loss: 0.000256
+Epoch [89/200], Train Loss: 0.000278, Test Loss: 0.000256
+Epoch [90/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [91/200], Train Loss: 0.000271, Test Loss: 0.000256
+Epoch [92/200], Train Loss: 0.000269, Test Loss: 0.000256
+Epoch [93/200], Train Loss: 0.000266, Test Loss: 0.000258
+Epoch [94/200], Train Loss: 0.000266, Test Loss: 0.000256
+Epoch [95/200], Train Loss: 0.000271, Test Loss: 0.000256
+Epoch [96/200], Train Loss: 0.000266, Test Loss: 0.000258
+Epoch [97/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [98/200], Train Loss: 0.000277, Test Loss: 0.000257
+Epoch [99/200], Train Loss: 0.000268, Test Loss: 0.000257
+Epoch [100/200], Train Loss: 0.000273, Test Loss: 0.000256
+Epoch [101/200], Train Loss: 0.000267, Test Loss: 0.000258
+Epoch [102/200], Train Loss: 0.000286, Test Loss: 0.000257
+Epoch [103/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [104/200], Train Loss: 0.000265, Test Loss: 0.000256
+Epoch [105/200], Train Loss: 0.000268, Test Loss: 0.000257
+Epoch [106/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [107/200], Train Loss: 0.000270, Test Loss: 0.000258
+Epoch [108/200], Train Loss: 0.000274, Test Loss: 0.000256
+Epoch [109/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [110/200], Train Loss: 0.000272, Test Loss: 0.000256
+Epoch [111/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [112/200], Train Loss: 0.000280, Test Loss: 0.000256
+Epoch [113/200], Train Loss: 0.000265, Test Loss: 0.000258
+Epoch [114/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [115/200], Train Loss: 0.000276, Test Loss: 0.000256
+Epoch [116/200], Train Loss: 0.000268, Test Loss: 0.000257
+Epoch [117/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [118/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [119/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [120/200], Train Loss: 0.000268, Test Loss: 0.000257
+Epoch [121/200], Train Loss: 0.000266, Test Loss: 0.000256
+Epoch [122/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [123/200], Train Loss: 0.000280, Test Loss: 0.000258
+Epoch [124/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [125/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [126/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [127/200], Train Loss: 0.000272, Test Loss: 0.000256
+Epoch [128/200], Train Loss: 0.000295, Test Loss: 0.000257
+Epoch [129/200], Train Loss: 0.000272, Test Loss: 0.000259
+Epoch [130/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [131/200], Train Loss: 0.000276, Test Loss: 0.000256
+Epoch [132/200], Train Loss: 0.000270, Test Loss: 0.000258
+Epoch [133/200], Train Loss: 0.000268, Test Loss: 0.000257
+Epoch [134/200], Train Loss: 0.000269, Test Loss: 0.000258
+Epoch [135/200], Train Loss: 0.000284, Test Loss: 0.000256
+Epoch [136/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [137/200], Train Loss: 0.000277, Test Loss: 0.000256
+Epoch [138/200], Train Loss: 0.000270, Test Loss: 0.000256
+Epoch [139/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [140/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [141/200], Train Loss: 0.000264, Test Loss: 0.000257
+Epoch [142/200], Train Loss: 0.000272, Test Loss: 0.000256
+Epoch [143/200], Train Loss: 0.000278, Test Loss: 0.000256
+Epoch [144/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [145/200], Train Loss: 0.000270, Test Loss: 0.000258
+Epoch [146/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [147/200], Train Loss: 0.000266, Test Loss: 0.000258
+Epoch [148/200], Train Loss: 0.000271, Test Loss: 0.000257
+Epoch [149/200], Train Loss: 0.000270, Test Loss: 0.000256
+Epoch [150/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [151/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [152/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [153/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [154/200], Train Loss: 0.000268, Test Loss: 0.000259
+Epoch [155/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [156/200], Train Loss: 0.000281, Test Loss: 0.000257
+Epoch [157/200], Train Loss: 0.000278, Test Loss: 0.000256
+Epoch [158/200], Train Loss: 0.000272, Test Loss: 0.000258
+Epoch [159/200], Train Loss: 0.000273, Test Loss: 0.000258
+Epoch [160/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [161/200], Train Loss: 0.000268, Test Loss: 0.000258
+Epoch [162/200], Train Loss: 0.000291, Test Loss: 0.000256
+Epoch [163/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [164/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [165/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [166/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [167/200], Train Loss: 0.000268, Test Loss: 0.000260
+Epoch [168/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [169/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [170/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [171/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [172/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [173/200], Train Loss: 0.000265, Test Loss: 0.000256
+Epoch [174/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [175/200], Train Loss: 0.000284, Test Loss: 0.000258
+Epoch [176/200], Train Loss: 0.000266, Test Loss: 0.000256
+Epoch [177/200], Train Loss: 0.000268, Test Loss: 0.000258
+Epoch [178/200], Train Loss: 0.000278, Test Loss: 0.000256
+Epoch [179/200], Train Loss: 0.000266, Test Loss: 0.000258
+Epoch [180/200], Train Loss: 0.000269, Test Loss: 0.000257
+Epoch [181/200], Train Loss: 0.000271, Test Loss: 0.000256
+Epoch [182/200], Train Loss: 0.000275, Test Loss: 0.000257
+Epoch [183/200], Train Loss: 0.000268, Test Loss: 0.000256
+Epoch [184/200], Train Loss: 0.000287, Test Loss: 0.000258
+Epoch [185/200], Train Loss: 0.000268, Test Loss: 0.000257
+Epoch [186/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [187/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [188/200], Train Loss: 0.000264, Test Loss: 0.000257
+Epoch [189/200], Train Loss: 0.000265, Test Loss: 0.000256
+Epoch [190/200], Train Loss: 0.000273, Test Loss: 0.000257
+Epoch [191/200], Train Loss: 0.000266, Test Loss: 0.000257
+Epoch [192/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [193/200], Train Loss: 0.000269, Test Loss: 0.000258
+Epoch [194/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [195/200], Train Loss: 0.000265, Test Loss: 0.000257
+Epoch [196/200], Train Loss: 0.000267, Test Loss: 0.000256
+Epoch [197/200], Train Loss: 0.000270, Test Loss: 0.000257
+Epoch [198/200], Train Loss: 0.000267, Test Loss: 0.000257
+Epoch [199/200], Train Loss: 0.000265, Test Loss: 0.000256
+Epoch [200/200], Train Loss: 0.000268, Test Loss: 0.000257
+
+============================================================
+Training Summary:
+------------------------------------------------------------
+Total epochs: 200
+Best epoch: 0
+Best test loss: inf
+Final train loss: 0.000268
+Final test loss: 0.000257
