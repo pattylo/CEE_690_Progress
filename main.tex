@@ -1,0 +1,80 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{lmodern}
+
+\begin{document}
+
+% First Page - Centered
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \includegraphics[width=0.3\textwidth]{dukeLogo.png}\\[3cm]
+
+    \begin{spacing}{2} % You can adjust this value (e.g., 1.3, 1.5)
+    \centering
+    \MakeUppercase{\Huge \textbf{Forecasting Stock Market Trends using Advanced Time-Series Modeling Techniques}}
+\end{spacing}
+\\[10.5ex]
+
+
+    {\Large \textbf{Authors: }\\[3ex]
+    Mohammad Afrazi\\[2ex]
+
+    Patrick Lo}\\[5cm]
+
+
+\end{titlepage}
+
+% Second Page - Left-Aligned and Bottom-Aligned
+\newpage
+
+
+
+\vspace{12pt}
+
+% SECTION 1: PROBLEM DESCRIPTION
+\section*{Problem Description}
+
+Predicting stock market movements is a notoriously difficult task due to the market's inherent volatility, non-linearity, and chaotic nature \cite{fischer2018deep}. Traditional time-series analysis models, such as ARIMA, often fail to capture the complex temporal dependencies and non-linear patterns present in financial data. This limitation presents a significant challenge for investors and financial institutions who rely on accurate forecasts for risk management and strategic decision-making. The development of more robust predictive models could lead to substantial improvements in financial forecasting, enabling more informed investment strategies.
+
+Our central hypothesis is that deep learning approaches—specifically advanced time-series architectures such as Long Short-Term Memory (LSTM) Recurrent Neural Networks (RNNs), Temporal Convolutional Networks (TCNs), and Transformer-based models—can more effectively model the long-term sequential dependencies in stock price data than traditional methods. We propose to develop and evaluate models based on these architectures to forecast the daily closing price of a stock using its historical price and volume data. The project's impact lies in its potential to provide a more accurate and reliable tool for financial forecasting, a problem of enduring interest to both the finance industry and academic researchers. Previous work has shown promise in using LSTMs for this purpose, but performance varies significantly based on model architecture and the specific dataset used \cite{nelson2017stock}. Our work aims to build on this foundation by implementing and comparing carefully structured models across LSTM, TCN, and Transformer frameworks, evaluating their performance on a comprehensive, recent dataset of US stocks.
+
+% SECTION 2: DATA DESCRIPTION
+\section*{Data Description}
+
+To address our research question, we plan to use the "US Stock Market Dataset," a publicly available dataset from Kaggle. This dataset contains daily stock data for a wide range of US-listed companies from June 2010 to October/?????? 202??????. The features for each stock include the daily Open, High, Low, Close, and Volume, which are standard metrics used in financial analysis.
+
+We have already downloaded this data, so there are no obstacles to its acquisition. The dataset is provided in a clean CSV format, which will simplify the preprocessing stage. The historical, sequential nature of this data is essential for our proposed approach. The daily closing prices will serve as our target variable for prediction, while the sequence of past prices and trading volumes will be used as input features to train our time-series models, including LSTM, TCN, and Transformer architectures. This rich historical context is precisely what such models are designed to leverage, allowing them to learn temporal and structural patterns over time that may be predictive of future movements.
+
+% SECTION 3: TENTATIVE APPROACH
+\section*{Tentative Approach}
+
+Our planned methodology consists of a multi-stage process, beginning with data preparation and concluding with model evaluation.
+
+First, we will perform \textbf{data preprocessing}. This involves selecting a specific stock from the dataset (e.g., Apple Inc. - AAPL) for our initial univariate analysis. We will then normalize the data, likely using a MinMaxScaler, to scale all feature values between 0 and 1. This step is critical for ensuring stable training of the neural network.
+
+Second, we will implement multiple \textbf{time-series model architectures}, including Long Short-Term Memory (LSTM) networks, Temporal Convolutional Networks (TCNs), and Transformer-based models, using TensorFlow and Keras. Each model will be designed to take a sequence of historical data (e.g., data from the previous 60 days) as input to predict the closing price of the next day. For the LSTM architecture, several stacked LSTM layers will be used with Dropout layers in between to prevent overfitting. The TCN and Transformer architectures will be adapted for financial time-series forecasting to capture both local temporal patterns and long-range dependencies in the data.
+
+Third, we will \textbf{train and evaluate} each model. The dataset will be divided into training and testing sets, using approximately 80\% for training and 20\% for testing. Model performance will be evaluated using the Root Mean Squared Error (RMSE) metric, which quantifies the average deviation between predicted and actual stock prices. Additionally, we will visualize the predicted prices against the actual prices to qualitatively assess each model’s forecasting accuracy and temporal alignment.
+
+This approach is highly feasible. LSTM, TCN, and Transformer models are well-established and powerful tools for time-series forecasting, and the required software libraries (TensorFlow, Scikit-learn, Pandas) are open-source and well-documented. The dataset is clean and of sufficient size to train these deep learning models effectively, enabling robust comparison and analysis of their relative performance.
+
+\vspace{3mm}
+
+\textbf{Work Breakdown:}
+\begin{itemize}
+    \item \textbf{Mohammad Afrazi:} Data preprocessing, feature engineering, writing, and model training/evaluation.
+    \item \textbf{Patrick Lo:} Data preprocessing, feature engineering, writing, and model training/evaluation.
+\end{itemize}
+
+
+
+\bibliographystyle{plain}
+\bibliography{reference}
+
+\end{document}
+

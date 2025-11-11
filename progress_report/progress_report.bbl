@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+
+\bibitem{fischer2018deep}
+Thomas Fischer and Christopher Krauss.
+\newblock Deep learning with long short-term memory networks for financial
+  market predictions.
+\newblock {\em European journal of operational research}, 270(2):654--669,
+  2018.
+
+\bibitem{khashei2011novel}
+Mehdi Khashei and Mehdi Bijari.
+\newblock A novel hybridization of artificial neural networks and arima models
+  for time series forecasting.
+\newblock {\em Applied Soft Computing}, 11(2):2664--2675, 2011.
+
+\bibitem{nelson2017stock}
+David~MQ Nelson, Adriano~CM Pereira, and Renato~A De~Oliveira.
+\newblock Stock market's price movement prediction with lstm neural networks.
+\newblock In {\em 2017 International joint conference on neural networks
+  (IJCNN)}, pages 1419--1426. Ieee, 2017.
+
+\end{thebibliography}

@@ -1,0 +1,94 @@
+\documentclass[12pt]{report}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{subcaption}
+
+\begin{document}
+
+% First Page - Centered
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    \includegraphics[width=0.3\textwidth]{media/dukeLogo.png}\\[3cm]
+
+    \begin{spacing}{2} % You can adjust this value (e.g., 1.3, 1.5)
+    \centering
+    \MakeUppercase{\Huge \textbf{Forecasting Stock Market Trends using Learning-Based Time-Series Modeling Techniques}}
+\end{spacing}
+
+\vspace{10.5ex}
+
+    {\Large \textbf{Authors: }\\[3ex]
+    Mohammad Afrazi\\[2ex]
+    Patrick Lo}\\[5cm]
+\end{titlepage}
+
+% Second Page - Left-Aligned and Bottom-Aligned
+\newpage
+
+\vspace{12pt}
+
+% SECTION 1: PROBLEM DESCRIPTION
+\section*{Problem Description}
+
+Predicting stock market movements is highly challenging due to the market's volatility, non-linearity, and chaotic dynamics \cite{fischer2018deep}. Traditional time-series models such as ARIMA struggle to capture complex temporal dependencies in financial data, limiting forecasting accuracy and decision-making in finance \cite{khashei2011novel}. 
+
+We argue and hypothesize that learning-based time-series models - specifically Long Short-Term Memory (LSTM) networks, Temporal Convolutional Networks (TCNs), and Transformer- based models - can better model long-term dependencies in stock price data. This project will develop and compare these models for forecasting the daily closing price of the \textbf{S\&P~500} index using historical price. Via evaluating LSTM, TCN, and Transformer approaches on a recent dataset of U.S. market data, we aim to advance financial forecasting methods and provide more reliable tools for investment and risk management \cite{nelson2017stock}.
+
+
+% SECTION 2: DATA DESCRIPTION
+\section*{Data Description}
+
+To address our research question, we utilize the "US Stock Market Dataset" from Kaggle, which contains over five years of daily stock and commodity data for a diverse set of U.S.-listed companies and assets. Each record includes the following features: \textit{No, Date, Natural\_Gas, Natural\_Gas\_Vol., Crude\_oil, Crude\_oil\_Vol., Copper, Copper\_Vol., Bitcoin, Bitcoin\_Vol., Ethereum, Ethereum\_Vol., S\&P\_500, Nasdaq\_100\_Price, Nasdaq\_100\_Vol., Apple, Apple\_Vol., Tesla, Tesla\_Vol., Microsoft, Microsoft\_Vol., Silver, Silver\_Vol., Google, Google\_Vol., Nvidia, Nvidia\_Vol., Berkshire, Berkshire\_Vol., Netflix, Netflix\_Vol., Amazon, Amazon\_Vol., Meta, Meta\_Vol., Gold, Gold\_Vol.}
+
+To mitigate the effects of major scale differences across time periods, we restrict our analysis to data from January 2, 2020, to November 29, 2022, yielding a total of 718 daily observations. Figures~\ref{fig:asset_price} and~\ref{fig:data_preview} provide visual summaries of the dataset, illustrating overall asset price dynamics and a sample of the input features used in our analysis.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{media/asset_price.pdf}
+        \caption{Asset price trends.}
+        \label{fig:asset_price}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{media/data_preview.pdf}
+        \caption{Data preview.}
+        \label{fig:data_preview}
+    \end{subfigure}
+    \caption{Visualization of the dataset showing asset price dynamics and a sample of the input data.}
+    \label{fig:data_visuals}
+\end{figure}
+
+
+\section*{Preprocessing}
+Since 
+For preprocessing, we first compute the log returns of each asset to normalize price movements and stabilize variance across different scales. The log return for time \( t \) is calculated as  
+\[
+r_t = \ln\left(\frac{P_t}{P_{t-1}}\right),
+\]
+where \( P_t \) represents the asset price at time \( t \). This transformation converts multiplicative price changes into additive ones, making the data more stationary and suitable for modeling. It also helps mitigate the effects of large price discrepancies between assets, ensuring that model training focuses on relative changes rather than absolute price levels.
+
+
+\vspace{3mm}
+
+\textbf{Work Breakdown:}
+\begin{itemize}
+    \item \textbf{Mohammad Afrazi:} Data preprocessing, feature engineering, writing, and model training/evaluation.
+    \item \textbf{Patrick Lo:} Data preprocessing, feature engineering, writing, and model training/evaluation.
+\end{itemize}
+
+
+\renewcommand{\bibname}{References}
+
+\bibliographystyle{plain}
+\bibliography{Reference}
+
+\end{document}
+
