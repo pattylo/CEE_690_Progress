@@ -365,7 +365,6 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/lm/rm-lmr17.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
-INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/lm/rm-lmri12.tfm
 INPUT ./media/asset_price.pdf
 INPUT ./media/asset_price.pdf
 INPUT media/asset_price.pdf
@@ -403,11 +402,17 @@ INPUT ./media/all_asset_log_returns.pdf
 INPUT media/all_asset_log_returns.pdf
 INPUT ./media/all_asset_log_returns.pdf
 INPUT ./media/all_asset_log_returns.pdf
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/lm/rm-lmri12.tfm
 INPUT ./media/pca_feature_importance.pdf
 INPUT ./media/pca_feature_importance.pdf
 INPUT media/pca_feature_importance.pdf
 INPUT ./media/pca_feature_importance.pdf
 INPUT ./media/pca_feature_importance.pdf
+INPUT ./media/training_loss_improved.pdf
+INPUT ./media/training_loss_improved.pdf
+INPUT media/training_loss_improved.pdf
+INPUT ./media/training_loss_improved.pdf
+INPUT ./media/training_loss_improved.pdf
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd

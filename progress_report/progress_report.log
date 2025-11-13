@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  11 NOV 2025 01:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  12 NOV 2025 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -286,72 +286,76 @@ Package pdftex.def Info: media/dukeLogo.png  used on input line 17.
  [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./media/dukeLogo.png>]
-<media/asset_price.pdf, id=10, 1084.05pt x 722.7pt>
+<media/asset_price.pdf, id=10, 1076.25966pt x 711.04016pt>
 File: media/asset_price.pdf Graphic file (type pdf)
 <use media/asset_price.pdf>
-Package pdftex.def Info: media/asset_price.pdf  used on input line 55.
-(pdftex.def)             Requested size: 217.42265pt x 144.94545pt.
-<media/data_preview.pdf, id=11, 1084.05pt x 722.7pt>
+Package pdftex.def Info: media/asset_price.pdf  used on input line 60.
+(pdftex.def)             Requested size: 203.83417pt x 134.66504pt.
+<media/data_preview.pdf, id=11, 854.59277pt x 601.68852pt>
 File: media/data_preview.pdf Graphic file (type pdf)
 <use media/data_preview.pdf>
-Package pdftex.def Info: media/data_preview.pdf  used on input line 62.
-(pdftex.def)             Requested size: 217.42265pt x 144.94545pt.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 73.
+Package pdftex.def Info: media/data_preview.pdf  used on input line 67.
+(pdftex.def)             Requested size: 203.83417pt x 143.50845pt.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 78.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 73.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 78.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 73.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 78.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 73.
+(Font)              <12> on input line 78.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 73.
+(Font)              <8> on input line 78.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 73.
+(Font)              <6> on input line 78.
  [1 <./media/asset_price.pdf> <./media/data_preview.pdf>]
-<media/all_asset_log_returns.pdf, id=133, 1300.86pt x 650.43pt>
+<media/all_asset_log_returns.pdf, id=132, 1300.86pt x 650.43pt>
 File: media/all_asset_log_returns.pdf Graphic file (type pdf)
 <use media/all_asset_log_returns.pdf>
-Package pdftex.def Info: media/all_asset_log_returns.pdf  used on input line 80.
-(pdftex.def)             Requested size: 362.37569pt x 181.18622pt.
-<media/pca_feature_importance.pdf, id=134, 867.24pt x 433.62pt>
+Package pdftex.def Info: media/all_asset_log_returns.pdf  used on input line 85.
+(pdftex.def)             Requested size: 317.07614pt x 158.53795pt.
+ [2 <./media/all_asset_log_returns.pdf>]
+<media/pca_feature_importance.pdf, id=217, 867.24pt x 433.62pt>
 File: media/pca_feature_importance.pdf Graphic file (type pdf)
 <use media/pca_feature_importance.pdf>
-Package pdftex.def Info: media/pca_feature_importance.pdf  used on input line 93.
-(pdftex.def)             Requested size: 362.37569pt x 181.18623pt.
- [2 <./media/all_asset_log_returns.pdf>]
-
-LaTeX Warning: Reference `fig:lstm_loss_curve' on page 3 undefined on input line 111.
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 115.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
+Package pdftex.def Info: media/pca_feature_importance.pdf  used on input line 122.
+(pdftex.def)             Requested size: 226.48395pt x 113.2414pt.
+<media/training_loss_improved.pdf, id=218, 722.7pt x 433.62pt>
+File: media/training_loss_improved.pdf Graphic file (type pdf)
+<use media/training_loss_improved.pdf>
+Package pdftex.def Info: media/training_loss_improved.pdf  used on input line 158.
+(pdftex.def)             Requested size: 203.83417pt x 122.29938pt.
+ [3 <./media/pca_feature_importance.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 183.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [3 <./media/pca_feature_importance.pdf>] (./progress_report.bbl [4]) [5
+)
+Overfull \hbox (1.69382pt too wide) in paragraph at lines 185--186
+\OT1/lmr/m/n/12 mance of \OT1/lmr/bx/n/12 Tem-po-ral Con-vo-lu-tional Net-works (TCN) \OT1/lmr/m/n/12 and \OT1/lmr/bx/n/12 Transformer-based
+ []
 
-] (./progress_report.aux)
+(./progress_report.bbl [4 <./media/training_loss_improved.pdf>]) [5
 
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./progress_report.aux) ) 
 Here is how much of TeX's memory you used:
- 4821 strings out of 478268
- 85554 string characters out of 5846347
- 378140 words of memory out of 5000000
- 22960 multiletter control sequences out of 15000+600000
+ 4828 strings out of 478268
+ 85827 string characters out of 5846347
+ 377148 words of memory out of 5000000
+ 22966 multiletter control sequences out of 15000+600000
  502882 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,11n,77p,851b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,11n,77p,834b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on progress_report.pdf (6 pages, 439638 bytes).
+Output written on progress_report.pdf (6 pages, 453701 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 409 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

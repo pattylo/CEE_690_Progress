@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex progress_report"] 1762842283 "progress_report.aux" "progress_report.bbl" "progress_report" 1762842569
+["bibtex progress_report"] 1762995730 "progress_report.aux" "progress_report.bbl" "progress_report" 1762995848
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "Reference.bib" 1762842043 1562 e9267aa612ffd507760273dd5892ce66 ""
-  "progress_report.aux" 1762842569 1114 e2f70e1caf200f8efccc8ddad519f174 "pdflatex"
+  "progress_report.aux" 1762995848 1371 d97f393423d3aed298c949bb3060342c "pdflatex"
   (generated)
   "progress_report.bbl"
   "progress_report.blg"
-["pdflatex"] 1762842568 "/Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Progress/progress_report/progress_report.tex" "progress_report.pdf" "progress_report" 1762842569
-  "/Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Progress/progress_report/progress_report.tex" 1762842565 8674 52ae062d665a9ee988b6abd8378722a2 ""
+["pdflatex"] 1762995848 "/Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Progress/progress_report/progress_report.tex" "progress_report.pdf" "progress_report" 1762995848
+  "/Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Progress/progress_report/progress_report.tex" 1762995848 14368 f5d1f74cf72ea3401f596429f79be790 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -84,13 +84,14 @@
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1664385961 2826436 c0e00433cb8449ffee47ad124cf408b8 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
   "media/all_asset_log_returns.pdf" 1762841048 150183 b952dfd68b08c019b9cebcf920c5100c ""
-  "media/asset_price.pdf" 1762841033 68620 dea2bbb0e7839539c4bf1bb17487a105 ""
-  "media/data_preview.pdf" 1762841033 18714 0a11cd96c926817c7aa2178578c44bf0 ""
+  "media/asset_price.pdf" 1762995758 68663 1944eb755ffdd4349701bd3bb165cddc ""
+  "media/data_preview.pdf" 1762995762 18748 efbe8006e840ab0125a9ae49dfd3040a ""
   "media/dukeLogo.png" 1759900552 4824 09437f21535701958ef3f65c17c2e409 ""
   "media/pca_feature_importance.pdf" 1762841064 28891 bcbe80a8af317d606380f8057a069a79 ""
-  "progress_report.aux" 1762842569 1114 e2f70e1caf200f8efccc8ddad519f174 "pdflatex"
-  "progress_report.bbl" 1762842283 1020 0fed11948ae90654bf7bb685e628ab92 "bibtex progress_report"
-  "progress_report.tex" 1762842565 8674 52ae062d665a9ee988b6abd8378722a2 ""
+  "media/training_loss_improved.pdf" 1762995408 15116 52ffa4efa889fec58ca403a8c7a84908 ""
+  "progress_report.aux" 1762995848 1371 d97f393423d3aed298c949bb3060342c "pdflatex"
+  "progress_report.bbl" 1762995730 1020 0fed11948ae90654bf7bb685e628ab92 "bibtex progress_report"
+  "progress_report.tex" 1762995848 14368 f5d1f74cf72ea3401f596429f79be790 ""
   (generated)
   "progress_report.aux"
   "progress_report.log"

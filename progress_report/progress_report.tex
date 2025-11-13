@@ -44,23 +44,28 @@ We argue and hypothesize that learning-based time-series models - specifically L
 % SECTION 2: DATA DESCRIPTION
 \section*{Data Description}
 
-To address our research question, we utilize the "US Stock Market Dataset" from Kaggle \cite{saketk511}, which contains over five years of daily stock and commodity data for a diverse set of U.S.-listed companies and assets. Each record includes the following features: \textit{No, Date, Natural\_Gas, Natural\_Gas\_Vol., Crude\_oil, Crude\_oil\_Vol., Copper, Copper\_Vol., Bitcoin, Bitcoin\_Vol., Ethereum, Ethereum\_Vol., S\&P\_500, Nasdaq\_100\_Price, Nasdaq\_100\_Vol., Apple, Apple\_Vol., Tesla, Tesla\_Vol., Microsoft, Microsoft\_Vol., Silver, Silver\_Vol., Google, Google\_Vol., Nvidia, Nvidia\_Vol., Berkshire, Berkshire\_Vol., Netflix, Netflix\_Vol., Amazon, Amazon\_Vol., Meta, Meta\_Vol., Gold, Gold\_Vol.}
+% Old version  
+% To address our research question, we utilize the "US Stock Market Dataset" from Kaggle \cite{saketk511}, which contains over five years of daily stock and commodity data for a diverse set of U.S.-listed companies and assets. Each record includes the following features: \textit{No, Date, Natural\_Gas, Natural\_Gas\_Vol., Crude\_oil, Crude\_oil\_Vol., Copper, Copper\_Vol., Bitcoin, Bitcoin\_Vol., Ethereum, Ethereum\_Vol., S\&P\_500, Nasdaq\_100\_Price, Nasdaq\_100\_Vol., Apple, Apple\_Vol., Tesla, Tesla\_Vol., Microsoft, Microsoft\_Vol., Silver, Silver\_Vol., Google, Google\_Vol., Nvidia, Nvidia\_Vol., Berkshire, Berkshire\_Vol., Netflix, Netflix\_Vol., Amazon, Amazon\_Vol., Meta, Meta\_Vol., Gold, Gold\_Vol.}
+%%
+
+To address our research question, we utilize the "US Stock Market Dataset" from Kaggle \cite{saketk511}. This dataset contains over five years of daily data, comprising 36 features. These features include price and volume data for major stock indices (S\&P~500, Nasdaq 100), key individual stocks (e.g., Apple, Tesla, Nvidia), major commodities (e.g., Crude Oil, Gold, Silver), and leading cryptocurrencies (e.g., Bitcoin, Ethereum). Our primary objective is to forecast the S\&P~500 closing price, treating the remaining asset data as predictive features.
+
 
 To mitigate the effects of major scale differences across time periods, we restrict our analysis to data from January 2, 2020, to November 29, 2022, yielding a total of 718 daily observations. Figures~\ref{fig:asset_price} and~\ref{fig:data_preview} provide visual summaries of the dataset, illustrating overall asset price dynamics and a sample of the input features used in our analysis.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{media/asset_price.pdf}
-        \caption{Asset price trends.}
+        \caption{Asset trends: Bitcoin, S\&P 500, etc.}
         \label{fig:asset_price}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{media/data_preview.pdf}
-        \caption{Data preview.}
+        \caption{Sample of raw dataset features.}
         \label{fig:data_preview}
     \end{subfigure}
     \caption{Visualization of the dataset showing asset price dynamics and a sample of the input data.}
@@ -74,63 +79,125 @@ To make the data more stationary and suitable for modelling, we first compute th
 \begin{align*}
     r_k = \ln\left(\frac{P_k}{P_{k-1}}\right),
 \end{align*}
-\noindent where $P_k$ represents the asset price at time $t$. It also helps mitigate the effects of large price discrepancies between assets, ensuring that model training focuses on relative changes rather than absolute price levels. Compared to figure \ref{fig:asset_price}, below shows the log-return transformed of all asset prices.
+\noindent where $P_k$ represents the asset price at time $k$. It also helps mitigate the effects of large price discrepancies between assets, ensuring that model training focuses on relative changes rather than absolute price levels. Compared to Figure \ref{fig:asset_price}, below shows the log-return transformed of all asset prices.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{media/all_asset_log_returns.pdf}
+    \includegraphics[width=0.7\textwidth]{media/all_asset_log_returns.pdf}
     \caption{Log-return transformed asset price trends.}
     \label{fig:all_asset_log_returns}
 \end{figure}
 
+
+
+% \subsubsection*{Dimension Reduction}
+
+% Here we perform \textbf{lag-principal component analysis (Lag-PCA)} to identify the most informative features in the dataset and reduce dimensionality. Since we are dealing with time-series data, we create a lagged version by sliding a window of size $l = 70$ over the time series. For each data chunk, we perform PCA independently to capture local temporal patterns. We then apply a \textbf{majority voting} scheme across all chunks to determine the most significant principal components ($n = 10$) to retain for model training. The majority voting is updated via the following heuristic:
+
+% \begin{align*}
+%     V_i \leftarrow V_i + n * \frac{1}{\text{rank}_i}.
+% \end{align*}
+
+% Here, $\text{rank}_i$ denotes the rank of the $i^{\text{th}}$ component within a chunk, and $n$ is the number of components considered. The components with the highest aggregated scores across all windows are selected as the final features for model training. Figure \ref{fig:pca_feature_importance} shows the final result of the Lag-PCA.
+
+
+
 \subsubsection*{Dimension Reduction}
-Here we perform \textbf{lag-principal component analysis (Lag-PCA)} to identify the most informative features in the dataset and reduce dimensionality. Since we are dealing with time-series data, we create a lagged version by sliding a window of size $l = 70$ over the time series. For each data chunk, we perform PCA independently to capture local temporal patterns. We then apply a \textbf{majority voting} scheme across all chunks to determine the most significant principal components ($n = 10$) to retain for model training. The majority voting is updated via the following heuristic:
+Here we perform \textbf{lag-principal component analysis (Lag-PCA)} to identify the most informative features in the dataset and reduce dimensionality. Our core hypothesis is that financial time-series data is \textbf{non-stationary}; the importance of a given feature (e.g., 'Crude\_oil') may change significantly over time. A single, "global" PCA performed on the entire dataset would average out these local temporal dynamics.
+
+To capture these time-varying relationships, we create data chunks by sliding a window of size $l = 70$ over the time series. For each 70-day chunk, we perform PCA independently. This local PCA allows us to rank the importance of the  \textit{original features} based on their contribution (i.e., factor loadings) to the principal components \textit{within that specific time window}.
+
+We then apply a \textbf{majority voting} scheme to aggregate these local rankings and identify the features that are \textit{consistently} important across all chunks. We maintain a global score vector $V$, where $V_i$ is the total score for the $i^{\text{th}}$ original feature. For each window, we update this score using the following heuristic:
 \begin{align*}
     V_i \leftarrow V_i + n * \frac{1}{\text{rank}_i}.
 \end{align*}
-Here, $\text{rank}_i$ denotes the rank of the $i^{\text{th}}$ component within a chunk, and $n$ is the number of components considered. The components with the highest aggregated scores across all windows are selected as the final features for model training. Figure \ref{fig:pca_feature_importance} shows the final result of the Lag-PCA.
+Here, $\text{rank}_i$ denotes the importance rank of the $i^{\text{th}}$ feature (from 1 to 36) within the current chunk, and $n$ is the number of principal components we consider to determine this rank (which we set to $n = 10$). This heuristic strongly rewards features that are frequently ranked as most important (i.e., have a low $\text{rank}_i$).
+
+After sliding the window across the entire dataset, the 10 \textit{original features} with the highest aggregated scores ($V_i$) are selected as the final, most informative features for model training. Figure \ref{fig:pca_feature_importance} shows the final aggregated scores from this Lag-PCA process.
+
+
+
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{media/pca_feature_importance.pdf}
+    \includegraphics[width=0.5\textwidth]{media/pca_feature_importance.pdf}
     \caption{Lag-PCA feature importance.}
     \label{fig:pca_feature_importance}
 \end{figure}
 
+% \section*{Methods}
+
+% In this project, we implement and compare three learning-based time-series models: Long Short-Term Memory (LSTM) networks, Temporal Convolutional Networks (TCNs), and Transformer-based models. 
+
+% \subsubsection*{LSTM}
+% We implement the LSTM model using PyTorch. The architecture consists of two LSTM layers followed by two fully connected layers. The model is trained using the Adam optimizer with a learning rate of 0.001 and Mean Squared Error (MSE) as the loss function. We employ early stopping based on validation loss to prevent overfitting.
+
+% Below shows the model architecture:
+% \textbf{include figure here}
+
+
+% \section*{Preliminary Results}
+% Here we include the preliminary results of the LSTM model. The training and validation loss curves are shown in Figure \ref{fig:lstm_loss_curve}. We observe that the training loss decreases steadily, while the validation loss starts to increase after a certain number of epochs, indicating potential overfitting.
+\vspace{-24pt}
 \section*{Methods}
-In this project, we implement and compare three learning-based time-series models: Long Short-Term Memory (LSTM) networks, Temporal Convolutional Networks (TCNs), and Transformer-based models. 
+In this project report, we implement and compare three learning-based time-series models: Long Short-Term Memory (LSTM) networks, Temporal Convolutional Networks (TCNs), and Transformer-based models. All models are trained to take a sequence of past data to predict the S\&P 500 log return for the following day.
 
 \subsubsection*{LSTM}
-We implement the LSTM model using PyTorch. The architecture consists of two LSTM layers followed by two fully connected layers. The model is trained using the Adam optimizer with a learning rate of 0.001 and Mean Squared Error (MSE) as the loss function. We employ early stopping based on validation loss to prevent overfitting.
+We implement the LSTM model using PyTorch. The model's architecture is designed to handle sequences of the $N=10$ features selected by our Lag-PCA.
 
-Below shows the model architecture:
-\textbf{include figure here}
+The model takes an input tensor of shape ($W$, $N$), where $W$ is the lookback window (e.g., $W=10$ previous days) and $N=10$ is the number of features. This sequence is processed by a single LSTM layer with $H=32$ hidden units. We use the output from the final time step of the LSTM layer, which represents the encoded state of the entire sequence. This output (of size $H=32$) is then passed through a dropout layer (with dropout rate 0.3) followed by two fully connected (Linear) layers. The first fully connected layer reduces the dimension from $H=32$ to $F=16$, and the final layer maps this to a single output value ($O=1$), representing the predicted log return for the next time step.
 
-% \subsubsection*{TCN}
-% We implement the TCN model using PyTorch. The architecture consists of several causal convolutional layers with dilated convolutions to capture long-range dependencies. The model is trained using the Adam optimizer with a learning rate of 0.001 and Mean Squared Error (MSE) as the loss function. Similar to the LSTM model, we use early stopping based on validation loss to prevent overfitting.
+
+
+The model is trained using the Adam optimizer with a learning rate of 0.001 and Mean Squared Error (MSE) as the loss function. We employ early stopping, monitoring the validation loss with a patience of 10 epochs, to prevent overfitting and save the best-performing model.
 
 \section*{Preliminary Results}
 Here we include the preliminary results of the LSTM model. The training and validation loss curves are shown in Figure \ref{fig:lstm_loss_curve}. We observe that the training loss decreases steadily, while the validation loss starts to increase after a certain number of epochs, indicating potential overfitting.
 
-\section*{Current Conclusions, Unexpected Challenges, Next Steps}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\linewidth]{media/training_loss_improved.pdf}
+    \caption{Training and Test Loss for the Improved LSTM model (1 LSTM layer, 32 hidden units, 2 FC layers, and Dropout)}
+    \label{fig:lstm_loss_curve}
+\end{figure}
+
+
+
+
+
+
+
+% \section*{Current Conclusions, Unexpected Challenges, Next Steps}
+% \begin{itemize}
+%     \item Successfully implemented the \textbf{LSTM} model for time-series prediction.
+%     \item Observed that the test loss is larger than the training loss, indicating possible \textbf{overfitting}. To mitigate this, we plan to gather and incorporate more data.
+%     \item With sufficient data, we intend to implement and compare the performance of \textbf{Temporal Convolutional Networks (TCN)} and \textbf{Transformer-based models} against the LSTM.
+%     \item Additionally, we will compare the results with traditional \textbf{regression models} to evaluate relative performance.
+%     \item We plan to investigate the effect of dimensionality reduction by examining whether reducing the number of \textbf{PCA components} significantly degrades model performance.
+%     \item Finally, we aim to train a model using the \textbf{raw price data} (without log-return transformation) and compare its results with the log-return–based model.
+% \end{itemize}
+
+\section*{Conclusions and Future Work}
+
+
 \begin{itemize}
-    \item Successfully implemented the \textbf{LSTM} model for time-series prediction.
-    \item Observed that the test loss is larger than the training loss, indicating possible \textbf{overfitting}. To mitigate this, we plan to gather and incorporate more data.
-    \item With sufficient data, we intend to implement and compare the performance of \textbf{Temporal Convolutional Networks (TCN)} and \textbf{Transformer-based models} against the LSTM.
-    \item Additionally, we will compare the results with traditional \textbf{regression models} to evaluate relative performance.
-    \item We plan to investigate the effect of dimensionality reduction by examining whether reducing the number of \textbf{PCA components} significantly degrades model performance.
-    \item Finally, we aim to train a model using the \textbf{raw price data} (without log-return transformation) and compare its results with the log-return–based model.
+    \item The initial \textbf{LSTM} model for time-series prediction has been successfully implemented and evaluated.
+    \item We observed that the test loss is notably higher than the training loss, which indicates potential \textbf{overfitting} of the model. To mitigate this, our primary plan is to expand the dataset by incorporating more historical data.
+    \item Pending dataset expansion, we intend to implement and benchmark the performance of \textbf{Temporal Convolutional Networks (TCN)} and \textbf{Transformer-based models} against the established LSTM baseline.
+    \item Additionally, the performance of these deep learning approaches will be contextualized by comparing their results against traditional \textbf{regression models}.
+    \item We also plan to investigate the impact of our dimensionality reduction strategy by conducting an analysis on whether reducing the number of \textbf{PCA components} significantly degrades model performance.
+    \item Finally, we aim to conduct a comparative study by training a model on the \textbf{raw price data} (without the log-return transformation) to validate the efficacy of our preprocessing methodology.
 \end{itemize}
-
-
 
 % \subsubsection*{TCN}
 
-\vspace{3mm}
+% \vspace{3mm}
 
-\textbf{Work Breakdown:}
+\section*{Work Breakdown:}
 \begin{itemize}
     \item \textbf{Mohammad Afrazi:} Data preprocessing, feature engineering, writing, and model training/evaluation.
     \item \textbf{Patrick Lo:} Data preprocessing, feature engineering, writing, and model training/evaluation.
 \end{itemize}
+We, Mohammad Afrazi and Patrick Lo, affirm that we have adhered to the Duke University Honor Code in the completion of this project.
 
 
 \renewcommand{\bibname}{References}
