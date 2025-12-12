@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  12 NOV 2025 20:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.29)  12 DEC 2025 12:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Progress/progress_report/progress_report.tex
-(/Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Progress/progress_report/progress_report.tex
+**/Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Project/progress_report/progress_report.tex
+(/Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Project/progress_report/progress_report.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
@@ -345,12 +345,12 @@ Overfull \hbox (1.69382pt too wide) in paragraph at lines 185--186
 ] (./progress_report.aux) ) 
 Here is how much of TeX's memory you used:
  4828 strings out of 478268
- 85827 string characters out of 5846347
+ 85824 string characters out of 5846347
  377148 words of memory out of 5000000
  22966 multiletter control sequences out of 15000+600000
  502882 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,11n,77p,834b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,11n,77p,833b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
 Output written on progress_report.pdf (6 pages, 453701 bytes).
 PDF statistics:

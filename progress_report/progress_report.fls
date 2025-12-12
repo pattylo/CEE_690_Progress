@@ -1,8 +1,8 @@
-PWD /Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Progress/progress_report
+PWD /Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Project/progress_report
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Progress/progress_report/progress_report.tex
+INPUT /Users/patricklo/Desktop/lab_duke/course/2526_sem1/ME555_ML/CEE_690_Project/progress_report/progress_report.tex
 OUTPUT progress_report.log
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
